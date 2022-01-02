@@ -1,28 +1,43 @@
-const express = require("express")
+const { assert } = require("console");
+const express = require("express");
+const { use } = require("express/lib/application");
 var router = express.Router()
 const mongoose = require("mongoose")
 const User = mongoose.model("User")
 
-function addUser() {
+function addUser(nickName, firstName, lastName, email, dateOfBirth, country, city) {
     var user = new User();
-    user.nickName = "Test nickname";
-    user.firstName = "FirstName";
-    user.lastName = "LastName";
-    user.email = "firstName.lastName@gmail.com";
-    user.dateOfBirth = new Date()
-    user.country = user.country;
-    user.city = user.city;
+    user.nickName = nickName;
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.email = email;
+    user.dateOfBirth = dateOfBirth
+    user.country = country;
+    user.city = city;
     user.save((err, doc) => {
         if (!err) {
-            console.log(`Dodano użytkownika ${user.nickName}`)
+            console.log(`Added new user ${user.nickName}`);
         } else {
-            console.log("Error during insert: " + err)
+            console.log("Error during adding new user: " + err);
         }
     });
+    return user._id.valueOf()
+}
+
+function removeUser(id) {
+    User.findByIdAndRemove(id, (err, doc) => {
+        if (!err) {
+            console.log(`Removed user with id ${id}`)
+        } else {
+            console.log("Error during removing user: " + err);
+        }
+    })
 }
 
 router.post("/", (req, res) => {
-    addUser();
+    let id = addUser("nickNameTest", "firstNameTest", "lastNameTest", "test4@gmail.com", new Date().getDate(), "countryTest", "cityTest");
+    console.log(id);
+    removeUser(id)
 })
 
 
