@@ -3,3 +3,12 @@ body{
     text-decoration: none;
     font-family: Montserrat;
 }
+
+.login__input{
+    color: blue;
+}
+
+.register__input{
+    color: blueviolet;
+}
+
