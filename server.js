@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log("Test działansdfsia serwera");
+    console.log("Server is running");
 })
 
 app.use("/add", userController);
