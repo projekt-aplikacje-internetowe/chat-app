@@ -1,8 +1,10 @@
 const express = require("express");
+const http = require("http")
 require("./database/db");
 const {
     allowInsecurePrototypeAccess
 } = require("@handlebars/allow-prototype-access")
+const io = require('socket.io')(http);
 const userController = require("./controllers/userController");
 
 
@@ -18,8 +20,12 @@ app.get("/", (req, res) => {
     res.send("Test resnpose");
 })
 
-app.listen(3000, () => {
-    console.log("Server is running");
+app.get("/users", (req, res) => {
+    
+});
+
+const server = app.listen(3000, () => {
+    console.log(`Server is running at ${server.address().address}@${server.address().port}`);
 })
 
-app.use("/add", userController);
+app.use("/users", userController);
