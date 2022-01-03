@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
-const { CountryCodes } = require("validator/lib/isISO31661Alpha2");
 
 let userSchema = new mongoose.Schema({
     nickName: {
         type: String,
         required: 'Nickname is required'
+    },
+    password: {
+        type: String,
+        required: 'Password is required'
     },
     firstName: {
         type: String,
