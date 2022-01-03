@@ -12,3 +12,18 @@ body{
     color: blueviolet;
 }
 
+.container {
+    display: flex;
+  }
+
+.container__content{
+    flex-direction: column;
+}
+
+.login{
+    display: flex;
+}
+
+.login__input{
+    flex-direction: column;
+}
