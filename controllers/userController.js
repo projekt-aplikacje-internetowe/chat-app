@@ -1,13 +1,14 @@
-const { assert } = require("console");
+const { assert, Console } = require("console");
 const express = require("express");
 const { use } = require("express/lib/application");
 var router = express.Router()
 const mongoose = require("mongoose")
 const User = mongoose.model("User")
 
-function addUser(nickName, firstName, lastName, email, dateOfBirth, country, city) {
+function addUser(nickName, password, firstName, lastName, email, dateOfBirth, country, city) {
     var user = new User();
     user.nickName = nickName;
+    user.password = password
     user.firstName = firstName;
     user.lastName = lastName;
     user.email = email;
@@ -21,7 +22,7 @@ function addUser(nickName, firstName, lastName, email, dateOfBirth, country, cit
             console.log("Error during adding new user: " + err);
         }
     });
-    return user._id.valueOf()
+    return user._id.valueOf();
 }
 
 function removeUser(id) {
@@ -34,86 +35,18 @@ function removeUser(id) {
     })
 }
 
-router.post("/", (req, res) => {
-    let id = addUser("nickNameTest", "firstNameTest", "lastNameTest", "test4@gmail.com", new Date().getDate(), "countryTest", "cityTest");
-    console.log(id);
-    removeUser(id)
-})
-
-
-
-
-/*
-router.get("/", (req, res) => {
-    res.render("student/addOrEdit", {
-        viewTitle: "Insert Student"
-    })
-})
-router.post("/", (req, res) => {
-    if (req.body._id == "") {
-        insertRecord(req, res)
-    } else {
-        updateRecord(req, res)
-    }
-})
-function insertRecord(req, res) {
-    var student = new Student()
-    student.fullName = req.body.fullName
-    student.email = req.body.email
-    student.mobile = req.body.mobile
-    student.city = req.body.city
-    student.save((err, doc) => {
-        if (!err) {
-            res.redirect("student/list")
-        } else {
-            console.log("Error during insert: " + err)
-        }
-    })
-}
-function updateRecord(req, res) {
-    Student.findOneAndUpdate(
-        { _id: req.body._id },
-        req.body,
-        { new: true },
-        (err, doc) => {
-            if (!err) {
-                res.redirect("student/list")
-            } else {
-                console.log("Error during update: " + err)
-            }
-        }
-    )
-}
 router.get("/list", (req, res) => {
-    Student.find((err, docs) => {
-        if (!err) {
-            res.render("student/list", {
-                list: docs
-            })
-        } else {
-            console.log("Error in retrieval: " + err)
-        }
+    User.find((err, users) => {
+        if(!err) res.send(users);
+        else console.log("Error during listing users " + err);
     })
+});
+
+router.post("/addUser", (req, res) => {
+    let date = new Date(req.body.birthday_year, 
+        req.body.birthday_month, req.body.birthday_day);
+    let id = addUser(req.body.nickname, req.body.password, req.body.firstname, req.body.lastName, req.body.email, date, req.body.country, req.body.city);
+    res.send("Added new user with id: " + id);
 })
-router.get("/:id", (req, res) => {
-    Student.findById(req.params.id, (err, doc) => {
-        if (!err) {
-            res.render("student/addOrEdit", {
-                viewTitle: "Update Student",
-                student: doc
-            });
-            console.log(doc);
-        }
-    })
-})
-router.get("/delete/:id", (req, res) => {
-    Student.findByIdAndRemove(req.params.id, (err, doc) => {
-        if (!err) {
-            res.redirect("/student/list")
-        } else {
-            console.log("Error in deletion: " + err)
-        }
-    })
-})
-*/
+
 module.exports = router
