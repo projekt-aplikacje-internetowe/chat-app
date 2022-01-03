@@ -4,26 +4,54 @@ body{
     font-family: Montserrat;
 }
 
-.login__input{
-    color: blue;
-}
-
-.register__input{
-    color: blueviolet;
-}
-
-.container {
+h1{
     display: flex;
-  }
-
-.container__content{
-    flex-direction: column;
+    justify-content: center;
 }
 
 .login{
     display: flex;
+    flex-direction: column;
 }
 
 .login__input{
+    color: blue;
     flex-direction: column;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+}
+
+.register__input{
+    color: blueviolet;
+    flex-direction: column;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+.container__content{
+    flex-direction: column;
+    width: 50%;
+}
+
+
+
+
+.footer{
+    display: flex;
+    align-self: center;
+    justify-content: center;
 }
