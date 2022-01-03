@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 mongoose.connect(
-    "mongodb://localhost:27017/StudentDB",
+    "mongodb://localhost:27017/ProjectDatabase",
     {
         useNewUrlParser: true
     },
@@ -12,4 +12,5 @@ mongoose.connect(
         }
     }
 )
+
 require("./user.model")
