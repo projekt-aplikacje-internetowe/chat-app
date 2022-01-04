@@ -45,6 +45,26 @@ h1{
     width: 70%;
 }
 
+.register__input--country{
+    color: blueviolet;
+    flex-direction: column;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    width: 70%;
+    border: none;
+}
+
+.register__input--birthdate{
+    color: hotpink;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__input:valid{
+    border: solid green 1px;
+}
+
 .register__button{
     border-radius: 8px;
     margin-top: 10px;

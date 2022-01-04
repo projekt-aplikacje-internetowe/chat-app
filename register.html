@@ -18,65 +18,52 @@
                 <h3>Zarejestruj się:</h3>
                 <form class="register">
                     <label for="nickname">Pseudonim:</label>
-                    <input class="register__input" type="text" name="nickname" placeholder="Wpisz swój pseudonim..."/>
+                    <input class="register__input" type="text" name="nickname" placeholder="Wpisz swój pseudonim..." required/>
                     <label for="firstname">Imię:</label>
-                    <input class="register__input" type="text" name="firstname" placeholder="Wpisz swoje imię..."/>
+                    <input class="register__input" type="text" name="firstname" placeholder="Wpisz swoje imię..." required/>
                     <label for="lastname">Nazwisko:</label>
-                    <input class="register__input" type="text" name="lastname" placeholder="Wpisz swoje nazwisko..."/>
+                    <input class="register__input" type="text" name="lastname" placeholder="Wpisz swoje nazwisko..." required/>
                     <label for="email">E-mail:</label>
-                    <input class="register__input" type="text" name="email" placeholder="Wpisz swój adres e-mail..."/>
+                    <input class="register__input" type="text" name="email" placeholder="Wpisz swój adres e-mail..." required/>
                     <label for="birthdate">Data urodzenia:</label>
-                    <fieldset id="birthdate" name="birthdate" class="register__input">
+                    <fieldset id="birthdate" name="birthdate" class="register__input register__input--birthdate">
                         <label for="birthday_day" class="offset">Dzień</label>
-                        <input type="text" name="birthday_day" id="birthday_day" size="2" maxlength="2" value="" />
+                        <input type="text" name="birthday_day" id="birthday_day" size="2" maxlength="2" value="" required/>
                         <label for="birthday_month" class="offset">Miesiąc</label>
-                        <input type="text" name="birthday_month" id="birthday_month" size="2" maxlength="2" value="" />
+                        <input type="text" name="birthday_month" id="birthday_month" size="2" maxlength="2" value="" required/>
                         <label for="birthday_year" class="offset">Rok</label>
-                        <input type="text" name="birthday_year" id="birthday_year" size="4" maxlength="4" value="" />
+                        <input type="text" name="birthday_year" id="birthday_year" size="4" maxlength="4" value="" required/>
                     </fieldset>
                     <label for="country">Kraj pochodzenia:</label>
-                    <select id="country" name="country" class="register__input">
+                    <select id="country" name="country" class="register__input register__input--country">
                         <option value="Afghanistan">Afghanistan</option>
-                        <option value="Åland Islands">Åland Islands</option>
                         <option value="Albania">Albania</option>
                         <option value="Algeria">Algeria</option>
-                        <option value="American Samoa">American Samoa</option>
-                        <option value="Andorra">Andorra</option>
+                        <option value="Andorra">Andora</option>
                         <option value="Angola">Angola</option>
-                        <option value="Anguilla">Anguilla</option>
-                        <option value="Antarctica">Antarctica</option>
-                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                        <option value="Argentina">Argentina</option>
+                        <option value="Argentina">Argentyna</option>
                         <option value="Armenia">Armenia</option>
-                        <option value="Aruba">Aruba</option>
                         <option value="Australia">Australia</option>
                         <option value="Austria">Austria</option>
-                        <option value="Azerbaijan">Azerbaijan</option>
-                        <option value="Bahamas">Bahamas</option>
-                        <option value="Bahrain">Bahrain</option>
-                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Azerbaijan">Azerbejdżan</option>
+                        <option value="Bahamas">Bahamy</option>
+                        <option value="Bangladesh">Bangladesz</option>
                         <option value="Barbados">Barbados</option>
-                        <option value="Belarus">Belarus</option>
-                        <option value="Belgium">Belgium</option>
-                        <option value="Belize">Belize</option>
+                        <option value="Belarus">Białoruś</option>
+                        <option value="Belgium">Belgia</option>
                         <option value="Benin">Benin</option>
-                        <option value="Bermuda">Bermuda</option>
                         <option value="Bhutan">Bhutan</option>
-                        <option value="Bolivia">Bolivia</option>
-                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                        <option value="Bolivia">Boliwia</option>
+                        <option value="Bosnia and Herzegovina">Bośnia i Hercegowina</option>
                         <option value="Botswana">Botswana</option>
-                        <option value="Bouvet Island">Bouvet Island</option>
-                        <option value="Brazil">Brazil</option>
-                        <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                        <option value="Brunei Darussalam">Brunei Darussalam</option>
-                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Brazil">Brazylia</option>
+                        <option value="Bulgaria">Bułgaria</option>
                         <option value="Burkina Faso">Burkina Faso</option>
                         <option value="Burundi">Burundi</option>
                         <option value="Cambodia">Cambodia</option>
                         <option value="Cameroon">Cameroon</option>
                         <option value="Canada">Canada</option>
                         <option value="Cape Verde">Cape Verde</option>
-                        <option value="Cayman Islands">Cayman Islands</option>
                         <option value="Central African Republic">Central African Republic</option>
                         <option value="Chad">Chad</option>
                         <option value="Chile">Chile</option>
@@ -282,11 +269,11 @@
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
                     <label for="city">Miejscowość zamieszkania:</label>
-                    <input class="register__input" type="text" name="city" placeholder="Wpisz swoją miejscowość..."/>
+                    <input class="register__input" type="text" name="city" placeholder="Wpisz swoją miejscowość..." required/>
                     <label for="password">Hasło:</label>
-                    <input class="register__input register__input--password" name="password" type="password" placeholder="Wpisz swoje hasło..."/>
+                    <input class="register__input register__input--password" name="password" type="password" placeholder="Wpisz swoje hasło..." required/>
                     <label for="verifypassword">Potwierdź hasło:</label>
-                    <input class="register__input register__input--password" name="verifypassword" type="password" placeholder="Potwierdź hasło..."/>
+                    <input class="register__input register__input--password" name="verifypassword" type="password" placeholder="Potwierdź hasło..." required/>
                     <button class="register__button" type="submit" action="/users/addUser" method="POST">Zarejestruj się</button>
                 </form>
                 <p>Masz już konto? <strong><a href="index.html">Zaloguj się!</a></strong></p>
