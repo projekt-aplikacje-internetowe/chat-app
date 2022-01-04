@@ -14,24 +14,28 @@
     <main class="container">
         <article class="container__content">
             <h2>Test h2</h2>
-            <section class="container__content container__content--user-register">
+            <section>
                 <h3>Zarejestruj się:</h3>
                 <form class="register">
+                    <label for="nickname">Pseudonim:</label>
                     <input class="register__input" type="text" name="nickname" placeholder="Wpisz swój pseudonim..."/>
+                    <label for="firstname">Imię:</label>
                     <input class="register__input" type="text" name="firstname" placeholder="Wpisz swoje imię..."/>
+                    <label for="lastname">Nazwisko:</label>
                     <input class="register__input" type="text" name="lastname" placeholder="Wpisz swoje nazwisko..."/>
+                    <label for="email">E-mail:</label>
                     <input class="register__input" type="text" name="email" placeholder="Wpisz swój adres e-mail..."/>
-                    <fieldset id="birthdate">
-                        <label for="birthday_day" class="offset">Birthday Day</label>
+                    <label for="birthdate">Data urodzenia:</label>
+                    <fieldset id="birthdate" name="birthdate" class="register__input">
+                        <label for="birthday_day" class="offset">Dzień</label>
                         <input type="text" name="birthday_day" id="birthday_day" size="2" maxlength="2" value="" />
-                      
-                        <label for="birthday_month" class="offset">Birthday Month</label>
+                        <label for="birthday_month" class="offset">Miesiąc</label>
                         <input type="text" name="birthday_month" id="birthday_month" size="2" maxlength="2" value="" />
-                      
-                        <label for="birthday_year" class="offset">Birthday Year</label>
+                        <label for="birthday_year" class="offset">Rok</label>
                         <input type="text" name="birthday_year" id="birthday_year" size="4" maxlength="4" value="" />
                     </fieldset>
-                    <select id="country" name="country" class="form-control">
+                    <label for="country">Kraj pochodzenia:</label>
+                    <select id="country" name="country" class="register__input">
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
                         <option value="Albania">Albania</option>
@@ -277,10 +281,13 @@
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
+                    <label for="city">Miejscowość zamieszkania:</label>
                     <input class="register__input" type="text" name="city" placeholder="Wpisz swoją miejscowość..."/>
+                    <label for="password">Hasło:</label>
                     <input class="register__input register__input--password" name="password" type="password" placeholder="Wpisz swoje hasło..."/>
+                    <label for="verifypassword">Potwierdź hasło:</label>
                     <input class="register__input register__input--password" name="verifypassword" type="password" placeholder="Potwierdź hasło..."/>
-                    <button class="register__button" type="submit">Zarejestruj się</button>
+                    <button class="register__button" type="submit" action="/users/addUser" method="POST">Zarejestruj się</button>
                 </form>
                 <p>Masz już konto? <strong><a href="index.html">Zaloguj się!</a></strong></p>
             </section>

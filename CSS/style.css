@@ -20,6 +20,15 @@ h1{
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 8px;
+    width: 70%;
+}
+
+.login__button{
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 20%;
+    padding: 10px;
+    align-self: center;
 }
 
 .register{
@@ -33,22 +42,28 @@ h1{
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 8px;
+    width: 70%;
+}
+
+.register__button{
+    border-radius: 8px;
+    margin-top: 10px;
+    align-self: center;
+    padding: 10px;
 }
 
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-  }
-
-.container__content{
-    flex-direction: column;
-    width: 50%;
 }
 
-
-
+.container__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+}
 
 .footer{
     display: flex;
