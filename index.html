@@ -15,17 +15,18 @@
     </header>
     <main class="container">
         <article class="container__content">
-            <h2>Test h2</h2>
             <section>
-                <h3>Logowanie</h3>
+                <h3 class="container__header">Zaloguj się:</h3>
                 <form class="login">
-                    <label for="email">E-mail:</label>
-                    <input class="login__input" type="text" name="email" placeholder="Wpisz swój adres e-mail..." required/>
-                    <label for="password">Hasło:</label>
-                    <input class="login__input login__input--password" name="password" type="password" placeholder="Wpisz swoje hasło..." required/>
+                    <label class="login__label" for="email">E-mail:<input class="login__input" type="text" name="email" placeholder="Wpisz swój adres e-mail..." required/></label>
+                    <label class="login__label" for="password">Hasło:<input class="login__input login__input--password" name="password" type="password" placeholder="Wpisz swoje hasło..." required/></label>
                     <button class="login__button" type="submit" action="">Zaloguj się</button>
+                    <div><hr></div>
+                    <button class="login__button" type="submit" action=""><img src="img/Google-logo.png" class="logo">Zaloguj się przez Google</button>
+                    <button class="login__button" type="submit" action=""><img src="img/Facebook-logo.svg" class="logo">Zaloguj się przez Facebook</button>
+                    <button class="login__button" type="submit" action=""><img src="img/Twitter-logo.png" class="logo">Zaloguj się przez Twitter</button>
                 </form>
-                <p>Nie masz konta? <strong><a href="register.html">Zarejestruj się!</a></strong></p>
+                <div class="login__text"><p>Nie masz konta? <strong><a href="register.html"> Zarejestruj się!</a></strong></p></div>
             </section>
         </article>
     </main>

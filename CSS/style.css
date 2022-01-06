@@ -20,6 +20,19 @@ a{
     color:black;
 }
 
+hr{
+    color: black;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.logo{
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+}
+
 .header{
     display: flex;
     flex-direction: column;
@@ -48,23 +61,45 @@ a{
 .login{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.container__header{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.login__label{
+    display: inline-block;
+    text-align: right;
+    width: 70%;
 }
 
 .login__input{
-    color: blue;
+    margin-left: 10px;
     flex-direction: column;
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 8px;
-    width: 70%;
+    width: 50%;
+    align-self: center;
 }
 
 .login__button{
-    border-radius: 8px;
+    border-radius: 16px;
     margin-top: 10px;
-    width: 20%;
-    padding: 10px;
+    width: 40%;
+    padding: 5px;
     align-self: center;
+    border: black 1px solid;
+    font-size: 16px;
+}
+
+.login__text{
+    display: flex;
+    align-self: center;
+    justify-content: center;
 }
 
 .register{
@@ -72,41 +107,40 @@ a{
     flex-direction: column;
 }
 
+.register__label{
+    text-align: right;
+    width: 70%;
+}
+
 .register__input{
-    color: blueviolet;
     flex-direction: column;
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 8px;
-    width: 70%;
-}
-
-.register__input--country{
-    color: blueviolet;
-    flex-direction: column;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    width: 70%;
-    border: none;
-}
-
-.register__input--birthdate{
-    color: hotpink;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
+    margin-left: 10px;
 }
 
 .register__input:valid{
-    border: solid green 1px;
+    border: solid green 2px;
 }
 
 .register__button{
-    border-radius: 8px;
+    border-radius: 16px;
     margin-top: 10px;
+    width: 40%;
+    padding: 5px;
     align-self: center;
-    padding: 10px;
+    border: black 1px solid;
+    font-size: 16px;
 }
+
+.register__text{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
 
 .container {
     display: flex;
@@ -119,6 +153,9 @@ a{
     flex-direction: column;
     justify-content: center;
     width: 40%;
+    border-radius: 6px;
+    border: solid 1px black;
+    padding: 10px;
 }
 
 .footer{
