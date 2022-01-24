@@ -72,6 +72,12 @@ hr{
   justify-content: center;
 }
 
+.chat__header{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
 .login__label{
   display: inline-block;
   text-align: right;
@@ -150,6 +156,14 @@ hr{
   justify-content: center;
 }
 
+.chat {
+  display: flex;
+  align-items: left;
+
+  flex-direction: row;
+  width: 100%;
+}
+
 .container__content{
   display: flex;
   flex-direction: column;
@@ -158,6 +172,47 @@ hr{
   border-radius: 6px;
   border: solid 1px black;
   padding: 10px;
+}
+
+
+.chat__content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 6px;
+  border: solid 1px black;
+  padding: 10px;
+  margin: 10px;
+}
+
+
+.chat__aside{
+  width: 25%;
+  border: solid 1px red;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.chat__message_box{
+  width: 40%;
+  height: 250px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.chat__enter_message{
+  align-self: left;
+  border: solid 1px green;
+  border-radius: 6px;
+  width: 50%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.chat__input{
+  width: 25%;
+  margin-right: 10px;
 }
 
 .footer{
