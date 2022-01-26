@@ -1,9 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
 const Chat = () => {
+
+    const [rooms, setRooms] = useState([]);
+
+    const [hidden, setHidden] = useState(true);
+
+    function getRooms(){
+        //fetch("http://localhost:3000/auth/userCredentials")
+        //    .then((res) => res.json())
+        //    .then((rooms) => setRooms(rooms.message));
+        setRooms( room => [...room, (`${room.id}, ${room.nazwa_pokoju}`)])
+        console.log(rooms);
+    }
+
+
+    function showRooms(){
+        return(
+            rooms && rooms.map(room =>
+                <tr key={room.id}>
+                    <td>ID:  {room.id}</td>
+                    <td> Nazwa pokoju: {room.nazwa_pokoju}</td>
+                </tr>
+            )
+        )
+    }
+        
+
+    function refreshRooms(){
+        setHidden(false);
+        setHidden(true);
+    }
+
     return (
         <div className='center__div'>
             <body>
@@ -24,11 +55,13 @@ const Chat = () => {
                     <aside className="chat__aside">
                         <h3 className='aside__header'>Utwórz czat grupowy:</h3>
                         <div className='aside__buttons'>
-                            <button className='aside__button' type='button' action=''>Utwórz czat</button>
-                            <button className='aside__button' type='button' action=''>Odśwież listę</button>
+                            <button className='aside__button' type='button' action='' onClick={refreshRooms}>Utwórz czat</button>
+                            <button className='aside__button' type='button' onClick={getRooms}>Odśwież listę</button>
                             <button className='aside__button aside__button--last' type='button' action=''>Dołącz do pokoju</button>
                         </div>
-                        <div className='chat__rooms_list'>aaa</div>
+                        <div className='chat__rooms_list'>
+                            {hidden ? showRooms() : ""}
+                        </div>
                     </aside>
                 </main>
                 <div className='chat__center_enter_message'>

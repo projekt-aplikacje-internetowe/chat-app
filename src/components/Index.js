@@ -8,13 +8,18 @@ import { Link } from 'react-router-dom';
 
 const Index = () => {
 
-    /*const [data, setData] = React.useState(null);
+    const [data, setData] = React.useState(null);
 
     React.useEffect(() => {
       fetch("/api")
         .then((res) => res.json())
         .then((data) => setData(data.message));
-    }, []);*/
+    }, []);
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log('Kliknięto na przycisk Wyślij.');
+      }
 
     return (
         <body>
@@ -23,7 +28,7 @@ const Index = () => {
                 <article className="container__content">
                     <section>
                         <h3 className="container__header">Zaloguj się:</h3>
-                        <form className="login" type='submit' method='POST'>
+                        <form className="login" type='submit' method='POST' onSubmit={handleSubmit}>
                             <label className="login__label" for="email">E-mail:<input className="login__input" type="text" name="email" placeholder="Wpisz swój adres e-mail..." required/></label>
                             <label className="login__label" for="password">Hasło:<input className="login__input login__input--password" name="password" type="password" placeholder="Wpisz swoje hasło..." required/></label>
                             <button className="login__button" action="/auth/local">Zaloguj się</button>
